@@ -16,3 +16,5 @@
                                       "&html=1"
                                     ""))))
     (url-retrieve "https://api.pushover.net/1/messages.json" (lambda (status) (kill-buffer (current-buffer)) t))))
+
+(provide 'pushover)
