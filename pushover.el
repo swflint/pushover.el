@@ -15,6 +15,8 @@
 
 ;;; Code:
 
+(require 'cl-lib)
+
 (defconst *pushover-api-key* "agd6sapvp5xcdmbuo1qdpc7mddscri")
 
 (defvar *pushover-user-key* nil)
