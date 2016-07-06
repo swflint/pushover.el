@@ -3,7 +3,7 @@
 ;; Copyright (C) 2016 Samuel Flint
 
 ;; Author: Samuel W. Flint <swflint@flintfam.org>
-;; Version: 1.0
+;; Version: 1.2
 ;; Package-Requires: ((cl-lib "0.5"))
 ;; Keywords: notifications
 ;; URL: http://github.com/swflint/pushover.el
