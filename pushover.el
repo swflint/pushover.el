@@ -21,6 +21,7 @@
 
 (defvar *pushover-user-key* nil)
 
+;;;### autoload
 (cl-defun pushover-send (title message &key url url-title sound (html t) (priority 0) retry expire)
   "TITLE MESSAGE &KEY URL URL-TITLE SOUND HTML PRIORITY RETRY EXPIRE
 
