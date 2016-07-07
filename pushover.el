@@ -17,9 +17,9 @@
 
 (require 'cl-lib)
 
-(defconst *pushover-api-key* "agd6sapvp5xcdmbuo1qdpc7mddscri")
+(defconst pushover-api-key "agd6sapvp5xcdmbuo1qdpc7mddscri")
 
-(defvar *pushover-user-key* nil)
+(defvar pushover-user-key nil)
 
 ;;;### autoload
 (cl-defun pushover-send (title message &key url url-title sound (html t) (priority 0) retry expire)
@@ -36,8 +36,8 @@ RETRY is the number of seconds between retries for emergency (2) priority.
 EXPIRE is number of seconds before an emergency priority message expires."
   (let ((url-request-method "POST")
         (url-request-data (concat (format "token=%s&user=%s&title=%s&message=%s&priority=%s&timestamp=%s"
-                                          *pushover-api-key*
-                                          *pushover-user-key*
+                                          pushover-api-key
+                                          pushover-user-key
                                           (url-encode-url title)
                                           (url-encode-url message)
                                           priority
