@@ -9,7 +9,7 @@
 ;; URL: http://github.com/swflint/pushover.el
 
 ;;; Commentary:
-;; 
+;;
 ;; This library provides a single function, pushover-send, which is
 ;; used to send notifications using the pushover service.
 
@@ -17,13 +17,23 @@
 
 (require 'cl-lib)
 
-(defconst pushover-api-key "agd6sapvp5xcdmbuo1qdpc7mddscri")
+(defgroup pushover nil
+  "Send notifications to the pushover service."
+  :group 'communication)
 
-(defvar pushover-user-key nil)
+(defcustom pushover-api-key "agd6sapvp5xcdmbuo1qdpc7mddscri"
+  "Pushover API key."
+  :type 'string
+  :group 'pushover)
+
+(defcustom pushover-user-key nil
+  "Pushover user key."
+  :type 'string
+  :group 'pushover)
 
 ;;;### autoload
 (cl-defun pushover-send (title message &key url url-title sound (html t) (priority 0) retry expire)
-  "TITLE MESSAGE &KEY URL URL-TITLE SOUND HTML PRIORITY RETRY EXPIRE
+  "Send notification to the pushover service.
 
 TITLE is the message title.
 MESSAGE is the message itself.
