@@ -72,6 +72,13 @@ EXPIRE is number of seconds before an emergency priority message expires."
                                     ""))))
     (url-retrieve "https://api.pushover.net/1/messages.json" (lambda (status) (kill-buffer (current-buffer)) t))))
 
+(when (fboundp 'alert-define-style)
+  (alert-define-style 'pushover :title "Pushover Alerter"
+                      :notifier (lambda (info)
+                                  (let ((title (plist-get info :title))
+                                        (message (plist-get info :message)))
+                                    (pushover-send title message)))))
+
 (provide 'pushover)
 
 ;;; pushover.el ends here
